@@ -1,0 +1,18 @@
+
+= Conclusão da Documentação
+
+== Encerramento
+
+Com o término desta documentação, concluímos uma jornada detalhada do nosso fluxo de transferências. Onde abordamos nossa Arquitetura, Desenvolvimento e propomos melhorias  para nossa infraestrutura e arquitetura de sistemas. Desde a adoção de novas tecnologias e práticas, como Quarkus, GraalVM e Terraform, até a otimização de fluxos de trabalho através de serviços AWS como API Gateway, SQS, Lambda, Step Functions e DynamoDB, cada seção foi projetada para fornecer um entendimento claro e abrangente das inovações e benefícios associados bem como os tradeoffs para termos insumos visando a melhor experiência aos nossos clientes internos e externos.
+
+== Agradecimentos
+
+Agradecemos a todos os colaboradores que dedicaram seu tempo e expertise para a elaboração desta documentação. Sua dedicação é fundamental para o crescimento contínuo e o sucesso da organização.
+
+== Futuros Passos
+
+Encorajamos a revisão contínua desta documentação bem como a proposição de novas melhorias à medida que avançamos. Este documento não é o fim, mas um ponto de partida para futuras inovações e melhorias.
+
+image::img/itubers.jfif[Cultura Ituber, align="center"]
+
+== `Obrigado!:)`

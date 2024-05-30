@@ -1,0 +1,7 @@
+
+= Propostas de Melhorias
+
+== Introdução
+
+Esta seção visa documentar possibilidades de melhorias na arquitetura e tecnologia do processamento de transferências. Nossa preocupação é garantir que o sistema seja competitivo, eficiente e alinhado com as melhores práticas e inovações possiveis.
+Abaixo estão as propostas de melhorias.

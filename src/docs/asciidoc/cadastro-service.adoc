@@ -1,0 +1,41 @@
+
+== Classe `CadastroServiceImpl`
+
+== Visão Geral
+
+A classe `CadastroServiceImpl` é responsável por realizar consultas de cadastro de clientes através de uma API de Cadastro. Ela implementa a interface `ApiService` e utiliza o `CadastroClientFeign` para comunicação com o serviço de cadastro.
+
+== Funções e Responsabilidades
+
+A principal função da classe `CadastroServiceImpl` é consultar informações de clientes pelo ID. Ela assegura que todas as operações sejam executadas de forma segura e confiável, aplicando padrões de resiliência como Retry e Circuit Breaker para lidar com falhas temporárias ou de serviço.
+
+== Métodos Principais
+
+=== Método `execute`
+
+Este método realiza a consulta do cliente pelo seu ID. Ele retorna os dados do cliente se encontrado ou lança uma exceção se o cliente não for encontrado.
+
+=== Tratamento de Exceções
+
+A classe trata as exceções de forma proativa, lançando erros específicos que descrevem problemas precisos, como cliente não encontrado ou falhas na API.
+
+== Métodos de Fallback
+
+=== Retry
+
+
+Este método é chamado após falhas repetidas nas tentativas de execução padrão, indicando problemas temporários que podem ser resolvidos com retransmissões.
+
+=== Circuit Breaker
+
+Este método é ativado quando um problema mais grave ou sustentado é detectado, como a indisponibilidade da API de cadastro, protegendo o sistema de falhas contínuas.
+
+== Considerações de Implementação
+
+- **Uso de `Optional`**: A classe utiliza `Optional` para evitar `NullPointerException` e para lidar de forma mais elegante com valores ausentes.
+- **Logging Extensivo**: A classe utiliza logs detalhados para registrar cada etapa da consulta, facilitando a depuração e monitoramento.
+- **Padrões de Resiliência**: A utilização de `Retry` e `Circuit Breaker` ajuda a garantir que a aplicação possa se recuperar de falhas sem afetar negativamente a experiência do usuário ou a estabilidade do sistema.
+
+== Conclusão
+
+`CadastroServiceImpl` desempenha um papel vital na gestão de informações de clientes dentro da API de Transferências Financeiras, garantindo a confiabilidade e a disponibilidade das operações de consulta de cadastro.

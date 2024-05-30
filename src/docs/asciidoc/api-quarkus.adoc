@@ -1,0 +1,54 @@
+
+= Proposta de Migração para Quarkus com GraalVM
+
+== Resumo Executivo
+
+Esta página tem como objetivo propor o desenvolvimento do microsserviço API de Transferência em Quarkus/GraalVM, com o objetivo de melhorar a performance, reduzir o consumo de recursos e otimizar a escalabilidade e a manutenção do serviço.
+
+== Introdução
+
+A API de Transferência é um componente crítico que requer alta disponibilidade e performance. Atualmente está proposta em Java com o framework Spring Boot, enfrenta desafios relacionados ao tempo de inicialização, consumo de memória e eficiência no processamento em ambientes de computação em nuvem.
+
+== Motivação para a Migração
+
+=== Redução do Tempo de Inicialização
+
+Quarkus, integrado com GraalVM, oferece tempos de inicialização significativamente menores comparado ao Spring Boot. Isso é vital para ambientes de escalabilidade horizontal e serverless, onde o tempo de inicialização impacta diretamente a capacidade de resposta do serviço.
+
+=== Consumo Otimizado de Memória
+
+Quarkus utiliza menos memória em tempo de execução que o Spring Boot. Esta eficiência é alcançada através da compilação Ahead-of-Time (AOT) proporcionada pelo GraalVM, que também melhora o desempenho do serviço ao reduzir a sobrecarga do garbage collector.
+
+=== Facilidade de Manutenção e Desenvolvimento
+
+Quarkus suporta a maioria das bibliotecas e padrões Java empresariais e oferece uma configuração simplificada comparada ao Spring Boot. Além disso, promove um modelo de programação reativo nativo que pode ser mais eficiente para lidar com operações I/O.
+
+== Comparativo Técnico
+
+[options="header"]
+|===
+| Característica | Spring Boot | Quarkus
+| Tempo de inicialização | Alto | Baixo
+| Consumo de memória | Maior | Menor
+| Suporte a programação reativa | Limitado | Nativo
+| Integração com Kubernetes | Boa | Excelente
+| Performance em tempo de execução | Bom | Excelente
+|===
+
+== Trade-offs e Preocupações
+
+=== Compatibilidade de Bibliotecas
+
+. Quarkus ainda está amadurecendo em termos de suporte à biblioteca quando comparado ao Spring Boot. A migração pode exigir substituições de bibliotecas ou modificações no código que dependem de bibliotecas não suportadas.
+
+=== Curva de Aprendizado
+
+. A equipe pode enfrentar uma curva de aprendizado com Quarkus e GraalVM, especialmente em áreas como configuração e tuning de performance.
+
+=== Complexidade de Desenvolvimento
+
+. A migração para um framework baseado em Quarkus pode introduzir novas complexidades, especialmente relacionadas à configuração e ao gerenciamento de dependências.
+
+== Conclusão
+
+Embora a migração para Quarkus com GraalVM ofereça vantagens substanciais, é fundamental abordar os trade-offs para uma compreensão clara dos potenciais desafios.

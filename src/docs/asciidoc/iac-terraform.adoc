@@ -1,0 +1,33 @@
+
+= Utilização de IaC com Terraform
+
+== Introdução
+
+A Infraestrutura como Código (IaC) é uma prática essencial para o gerenciamento moderno de infraestruturas de TI, especialmente na era da nuvem. Optamos por Terraform, uma ferramenta de IaC desenvolvida pela HashiCorp que permite aos usuários definir e provisionar infraestrutura usando uma linguagem de configuração declarativa.
+
+== Benefícios do Terraform
+
+Terraform oferece várias vantagens que simplificam e melhoram a gestão de infraestrutura:
+
+=== Gerenciamento Declarativo de Infraestrutura
+
+. *Consistência*: Terraform utiliza arquivos de configuração para descrever a infraestrutura desejada, garantindo que os recursos sejam criados de forma consistente e repetível.
+. *Transparência*: As configurações são escritas em formatos claros e legíveis por humanos, facilitando a compreensão e o controle de versões das infraestruturas.
+
+=== Automação de Deploy e Alterações
+
+. *Eficiência*: Automatiza a criação e a modificação de recursos, reduzindo a necessidade de intervenção manual e diminuindo os riscos de erros humanos.
+. *Velocidade*: Permite a rápida implantação de infraestrutura, o que é crucial para ambientes dinâmicos que necessitam de agilidade para mudanças ou escalabilidade.
+
+=== Independência de Provedores de Nuvem
+
+. *Flexibilidade*: Compatível com vários provedores de serviços em nuvem, como AWS, Azure e Google Cloud, permitindo gerenciar infraestruturas multicloud e on-premise com a mesma ferramenta.
+. *Portabilidade*: Facilita a migração de recursos entre diferentes plataformas de nuvem, protegendo os investimentos e evitando o bloqueio por fornecedor.
+
+=== Modularização
+
+. *Beneficios*: Terraform suporta uma abordagem modular para a configuração de infraestrutura, o que traz múltiplos benefícios para o gerenciamento de sistemas complexos. A modularização permite aos usuários de Terraform construir componentes reutilizáveis e gerenciáveis que podem ser combinados de várias maneiras para criar infraestruturas completas.
+
+== Conclusão
+
+A adoção do Terraform para o gerenciamento de infraestrutura como código proporciona uma abordagem robusta, eficiente e flexível para o provisionamento de infraestrutura de TI. Seus benefícios de automação, controle de versão, suporte multicloud e gestão de estado fazem dele uma ferramenta indispensável para equipes de desenvolvimento e operações modernas.

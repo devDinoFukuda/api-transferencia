@@ -1,0 +1,23 @@
+= Documentação da API de Transferências entre Contas
+:doctype: book
+:toc: left
+:toclevels: 3
+:icons: font
+:numbered:
+:source-highlighter: rouge
+
+include::inicio.adoc[]
+include::api-funcionamento.adoc[]
+include::transferencia-controller.adoc[]
+include::transferencia-service.adoc[]
+include::conta-service.adoc[]
+include::cadastro-service.adoc[]
+include::bacen-service.adoc[]
+include::exception-handler.adoc[]
+include::arquitetura.adoc[]
+include::melhorias-main.adoc[]
+include::api-quarkus.adoc[]
+include::melhoria-arquitetura.adoc[]
+include::proposta-observabilidade.adoc[]
+include::iac-terraform.adoc[]
+include::encerramento.adoc[]

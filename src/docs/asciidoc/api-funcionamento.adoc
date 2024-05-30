@@ -1,0 +1,5 @@
+
+= Funcionamento da API de Transferências
+
+== Introdução
+Estamos fornecendo uma visão detalhada das classes onde residem a lógica de negócios, tratamento de exceções, bem como a porta de entrada da API de Transferências do Desafio Itaú.

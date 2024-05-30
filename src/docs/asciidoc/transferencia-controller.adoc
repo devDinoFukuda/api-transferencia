@@ -1,0 +1,52 @@
+
+== Classe `TransferenciaController`
+
+== Visão Geral
+
+A classe é responsável por manipular solicitações HTTP relacionadas a transferências entre contas e notificar o serviço Bacen sobre essas transações.
+
+== Endpoint de Transferência
+
+A classe `TransferenciaController` expõe o endpoint `/transferencia` que aceita solicitações POST para iniciar o processo de transferência. Abaixo estão detalhadas as principais responsabilidades e o fluxo de execução deste endpoint.
+
+=== Solicitação de Transferência
+
+Para realizar uma transferência, o cliente da API deve enviar uma requisição POST com os dados necessários encapsulados no `TransferenciaRequestDTO`. Os dados devem ser válidos e completos para que a transferência possa ser processada.
+
+[source,json]
+----
+{
+  "valor": 100.00,
+  "contaOrigem": "123456",
+  "contaDestino": "654321",
+  "dataTransferencia": "2024-05-25"
+}
+----
+
+=== Processamento da Transferência
+
+Quando uma solicitação é recebida, o método `efetuarTransferencia` é chamado. Este método realiza as seguintes operações:
+
+1. Chama o serviço `transferenciaService` para executar a transferência e retorna um `UUID` que identifica a transação.
+2. Notifica o serviço Bacen sobre a transferência através do `bacenService`, enviando detalhes da transferência junto com o `UUID` da transação.
+3. Cria uma resposta com o `UUID` da transação utilizando `TransferenciaResponseDTO`.
+
+=== Resposta da API
+
+Se a transferência for bem-sucedida, a API retorna um status HTTP 201 (Created) e um cabeçalho `Location` com a URL da transação criada.
+
+[source,json]
+----
+HTTP/1.1 201 Created
+Location: /transferencia/{uuid-da-transacao}
+Content-Type: application/json
+
+{
+  "idTransferencia": "{uuid-da-transacao}"
+}
+----
+
+== Conclusão
+
+A `TransferenciaController` é uma peça crucial na arquitetura da API de Transferências Financeiras, assegurando que as transferências sejam realizadas de forma segura e eficaz, e que o Bacen seja devidamente notificado de acordo com as regulamentações vigentes.
+

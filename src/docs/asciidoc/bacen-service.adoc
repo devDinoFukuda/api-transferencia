@@ -1,0 +1,37 @@
+
+= Classe `BacenServiceImpl`
+
+== Visão Geral
+
+A classe `BacenServiceImpl` implementa `ApiService` e é responsável por notificar o Banco Central (Bacen) de todas as transações efetuadas. Utiliza várias tecnologias e serviços, incluindo Amazon DynamoDB e Amazon SQS, para garantir a robustez e confiabilidade do processo de notificação.
+
+== Detalhes da Implementação
+
+=== Principais Componentes
+
+. `BacenClientFeign`: Cliente Feign para comunicação com o serviço externo do Bacen.
+. `DynamoDBMapper`: Integração com DynamoDB para persistência de dados de transações.
+. `SQSServiceImpl`: Serviço para enfileiramento de mensagens para processamento assíncrono em caso de falhas.
+
+=== Método `execute`
+Este método trata da lógica de envio de notificações ao Bacen e do tratamento de respostas. Em caso de falha na comunicação, ele grava as transações como não notificadas no DynamoDB e encaminha os detalhes para uma fila SQS para tentativas futuras de reprocessamento.
+
+=== Estratégias de Fallback
+
+A classe implementa métodos de fallback utilizando padrões de `Circuit Breaker`para lidar com falhas na comunicação com o Bacen.
+
+==== Fallback Circuit Breaker
+Este método é acionado quando o circuit breaker é ativado, indicando problemas recorrentes na comunicação com o serviço do Bacen.
+
+== Salvando Dados em Falha
+
+Quando ocorre uma falha na comunicação, os dados da transação são salvos no DynamoDB com um status indicando que o Bacen não foi notificado, e uma notificação é enviada para a fila SQS para tentativa de reprocessamento posterior.
+
+== Função SQS
+
+A classe envia detalhes das transações falhas para a fila SQS, que são então processadas assincronamente para tentar reenviar a notificação ao Bacen.
+
+== Conclusão
+
+`BacenServiceImpl` é essencial para garantir a conformidade com os requisitos regulatórios, comunicando cada transação ao Bacen. A implementação robusta com fallbacks e integração com serviços de fila e banco de dados assegura a resiliência e confiabilidade do processo.
+

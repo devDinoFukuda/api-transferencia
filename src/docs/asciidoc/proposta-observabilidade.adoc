@@ -1,0 +1,19 @@
+
+= Proposta de Observabilidade
+
+== Arquitetura Inicial
+=== Istio
+Ambiente Kubernetes
+
+=== Benefícios
+. *Coleta de métrica*:  logs e traces detalhados do tráfego entre serviços.
+. *Dashboards integrados*: Integração com ferramentas como Prometheus, Grafana e Jaeger.
+. *Controle Roteamento de Tráfego*: Controle granular sobre roteamento de tráfego.
+
+== Arquitetura Proposta
+=== New Relic
+
+=== Benefícios
+. *Plataforma Unificada*:  Todas as funcionalidades de monitoramento e observabilidade em um único lugar, facilitando a gestão e análise.
+. *Funcionalidades Avançadas*: Oferece insights baseados em AI, análises de performance detalhadas e suporte proativo.
+. *Suporte Multi-Cloud*: Suporte para ambientes multi-cloud e on-premises,.

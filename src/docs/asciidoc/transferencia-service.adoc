@@ -1,0 +1,30 @@
+
+== Classe `TransferenciaServiceImpl`
+
+== Visão Geral
+
+A classe `TransferenciaServiceImpl` é responsável por processar as solicitações de transferência entre contas na API de Transferências Financeiras. Esta classe implementa a interface `ApiService` e trabalha em conjunto com serviços de cadastro e contas para completar as transações.
+
+== Detalhes da Implementação
+
+=== Serviços Auxiliares
+
+* `serviceCadastro`: Gerencia operações relacionadas ao cadastro de clientes.
+* `serviceConta`: Responsável por operações de conta, incluindo a execução de transferências financeiras.
+
+=== Método `execute`
+
+
+
+Este método valida e processa as solicitações de transferência usando uma cadeia de métodos opcionais para evitar valores nulos. A execução envolve a verificação e obtenção de informações do cliente seguida pela execução da transferência.
+
+=== Tratamento de Exceções
+
+Utiliza-se uma exceção personalizada, `TransferenciaProcessamentoException`, para lidar com falhas no processo de transferência, garantindo que a API responda adequadamente sob condições adversas.
+
+
+
+== Conclusão
+
+A `TransferenciaServiceImpl` é uma peça central na arquitetura da nossa API, facilitando transações seguras e eficientes enquanto mantém a conformidade com as exigências regulatórias.
+

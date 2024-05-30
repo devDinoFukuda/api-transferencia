@@ -1,0 +1,42 @@
+
+== Classe `ContaServiceImpl`
+
+== Visão Geral
+
+A `ContaServiceImpl` é uma implementação do serviço `ApiService` que gerencia operações de transferência financeira entre contas. Esta classe é essencial para o processamento de transações, incluindo validações e atualizações de saldo das contas envolvidas.
+
+== Responsabilidades da Classe
+
+Esta classe possui múltiplas responsabilidades, incluindo:
+
+- Consultar detalhes de contas origem e destino.
+- Validar a disponibilidade de fundos.
+- Executar transferências e atualizar saldos.
+- Tratar exceções e aplicar estratégias de resiliência, como Retry e Circuit Breaker.
+
+== Métodos Principais
+
+=== Método `execute`
+
+
+Este método processa a transferência entre contas. Ele sequencia as operações de consulta e validação das contas envolvidas, executa a transferência e atualiza os saldos. Em caso de falha, lança uma `ContaProcessamentoException`.
+
+=== Métodos de Resiliência
+
+==== Retry
+
+Este método de fallback é acionado quando as tentativas de execução da transferência falham repetidamente.
+
+==== Circuit Breaker
+
+Este método é acionado quando um problema sistêmico é detectado, como a indisponibilidade da API de contas. Ele fornece um caminho de falha para evitar falhas em cascata.
+
+== Considerações de Implementação
+
+- **Logging Extensivo**: A classe faz uso extensivo de logs para monitorar o fluxo da transação e identificar rapidamente pontos de falha.
+- **Uso de `Optional`**: Para garantir que as operações com objetos possivelmente nulos sejam tratadas de forma segura, evitando `NullPointerException`.
+- **Padrões de Resiliência**: Implementação de padrões como Retry e Circuit Breaker usando `resilience4j` para melhorar a robustez da aplicação.
+
+== Conclusão
+
+`ContaServiceImpl` desempenha um papel crítico na gestão das transferências financeiras, assegurando a execução suave e segura das transações, com mecanismos adequados para lidar com falhas e garantir a continuidade do serviço.

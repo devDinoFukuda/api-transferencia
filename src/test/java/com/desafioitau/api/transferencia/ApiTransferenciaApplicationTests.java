@@ -1,13 +1,14 @@
 package com.desafioitau.api.transferencia;
 
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.junit.jupiter.MockitoExtension;
 
-@SpringBootTest
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
+@ExtendWith(MockitoExtension.class)
 class ApiTransferenciaApplicationTests {
+	
 
-	@Test
-	void contextLoads() {
-	}
-
+	
 }

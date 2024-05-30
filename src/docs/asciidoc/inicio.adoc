@@ -1,0 +1,45 @@
+= API de Transferências - Documentação
+:doctype: book
+:toc: left
+:toclevels: 3
+:icons: font
+:sectnums:
+:numbered:
+:source-highlighter: rouge
+
+[.text-center]
+image::img/logo_itau.png[Logo da Empresa,align="center",width="200",height="200"]
+
+== Bem-vindo à Documentação da API de Transferências do Desafio Itaú
+
+A API de Transferências Financeiras do Desafio Itaú fornece uma interface programática para realizar transferências entre contas internas e notificar entidades regulatórias, como o Bacen, sobre essas transações.
+
+Esta documentação é destinada a desenvolvedores e arquitetos de sistemas que desejam integrar seus sistemas com nossa API, oferecendo detalhes técnicos sobre cada ponto de extremidade, exemplos de uso, e instruções para o consumo adequado dos serviços disponíveis.
+
+== Características Principais
+
+A API oferece funcionalidades robustas para facilitar transferências financeiras seguras e eficientes, incluindo:
+
+* **Criação de Transferências**: Inicie transferências de forma programática.
+* **Notificação ao Bacen**: Automatize as notificações ao Banco Central sobre transações realizadas, conforme necessário por regulamentações.
+* **Segurança e Conformidade**: Assegure que todas as transações atendam às normas de segurança e conformidade do setor.
+
+== Como Usar Esta Documentação
+
+Cada seção desta documentação cobre um aspecto diferente da API:
+
+* Visão Geral
+* Guia de Início Rápido
+* Referência de API
+* Perguntas Frequentes (FAQ)
+* Histórico de Versões e Mudanças
+
+== Feedback e Suporte
+
+Valorizamos o feedback de nossos usuários para melhorar continuamente a API e sua documentação. Se você tiver sugestões ou precisar de assistência, não hesite em contatar nosso suporte técnico através do e-mail [suporte@api.desafioitau.com](mailto:suporte@api.desafioitau.com).
+
+Aproveite a utilização de nossa API e esperamos que ela atenda bem às suas necessidades de integração e automação financeira!
+
+== Links Úteis
+Para mais detalhes sobre os endpoints da API e para testar as chamadas de API de forma interativa, visite nossa interface do Swagger:
+link:http://localhost:8083/api-transferencia/documentacao[Swagger UI]

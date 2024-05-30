@@ -1,0 +1,37 @@
+
+= Classe `ApiTransferenciaExceptionHandler`
+
+== Visão Geral
+
+A `ApiTransferenciaExceptionHandler` é responsável por manipular todas as exceções geradas durante as operações de transferência na API. Ela captura exceções específicas lançadas por diferentes partes da API e retorna respostas de erro formatadas para os clientes da API.
+
+== Responsabilidades da Classe
+
+Esta classe de manipulação de exceções garante que todos os erros sejam tratados de forma uniforme, melhorando a usabilidade e confiabilidade da API. Ela proporciona:
+
+- Respostas detalhadas para erros de validação.
+- Tratamento específico para erros de processamento e indisponibilidade de serviços.
+- Respostas apropriadas para erros de negócio, como saldo insuficiente ou limite diário ultrapassado.
+
+== Métodos Principais de Manipulação de Exceções
+
+=== Método Argumentos Não Válidos
+
+Este método trata exceções lançadas quando argumentos inválidos são passados no corpo da requisição. Retorna um erro `400 Bad Request`.
+
+=== Exceções de Cadastro e Contas
+
+Métodos que tratam exceções específicas relacionadas ao cadastro de clientes e operações de conta, tais como cliente não encontrado (`404 Not Found`) ou API de cadastro indisponível (`503 Service Unavailable`).
+
+=== Exceções de Conta Inativa e Saldo Insuficiente
+
+Estes métodos tratam erros operacionais como conta inativa ou saldo insuficiente, ambos retornando `406 Not Acceptable`.
+
+== Considerações de Implementação
+
+- **Localização de Timestamps**: A classe utiliza `ZonedDateTime` para assegurar que os timestamps nos logs e nas respostas sejam corretos para o fuso horário especificado.
+- **Logging Extensivo**: Extensivo logging é utilizado para garantir que todos os erros sejam registrados, facilitando a depuração e o monitoramento.
+
+== Conclusão
+
+`ApiTransferenciaExceptionHandler` desempenha um papel crucial na gestão de exceções dentro da API, garantindo que erros sejam tratados de maneira eficaz e que a comunicação de erros aos consumidores da API seja clara e útil.
