@@ -64,6 +64,3 @@ springdoc:
 aws:
   sqs:
   url: http://localhost:4566/000000000000/myQueue
-
-  #docker run --rm -it -p 4566:4566 -p 4510-4559:4510-4559 -e LOCALSTACK_AUTH_TOKEN="ls-JoKo2234-ZOzA-LOmO-LeJi-FEXetaDIff18" localstack/localstack-pro
-  #aws ecr get-login-password --region us-east-1 --endpoint-url=http://localhost:4566 | docker login --username AWS --password-stdin localhost:4566
